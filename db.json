@@ -114,6 +114,72 @@
           "dueDate": "2024-04-27T10:00:00"
         }
       ]
+    },
+    {
+      "id": 3,
+      "name": "E-commerce Website Redesign",
+      "description": "Revamp the design and functionality of an online store",
+      "startDate": "2024-04-10T15:00:00",
+      "dueDate": "2024-05-15T00:00:00",
+      "status": "Planning",
+      "tasks": [
+        {
+          "id": 3,
+          "projectId": 2,
+          "name": "Finalize wireframes and user flow",
+          "description": "Define the user journey and page layouts",
+          "priority": "High",
+          "status": "Done",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "id": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-12T08:00:00",
+          "dueDate": "2024-04-18T17:00:00"
+        },
+        {
+          "id": 4,
+          "projectId": 2,
+          "name": "Select design tools and style guide",
+          "description": "Choose design tools and establish a consistent visual identity",
+          "priority": "Medium",
+          "status": "In Progress",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "id": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-20T14:00:00",
+          "dueDate": "2024-04-27T10:00:00"
+        }
+      ]
     }
   ],
   "users": [
