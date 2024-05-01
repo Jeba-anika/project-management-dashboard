@@ -1,12 +1,30 @@
 {
   "projects": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Project Management Dashboard",
       "description": "A web application for managing projects and tasks",
       "startDate": "2024-04-25T10:00:00",
       "dueDate": null,
-      "status": "In Progress",
+      "status": "Planning",
+      "assignedTo": {
+        "members": [
+          {
+            "userId": 1,
+            "username": "admin",
+            "password": "hashed_password",
+            "email": "admin@example.com",
+            "role": "Admin"
+          },
+          {
+            "userId": 2,
+            "username": "user1",
+            "password": "hashed_password",
+            "email": "user1@example.com",
+            "role": "Member"
+          }
+        ]
+      },
       "tasks": [
         {
           "id": 1,
@@ -25,7 +43,7 @@
                 "role": "Admin"
               },
               {
-                "id": 2,
+                "userId": 2,
                 "username": "user1",
                 "password": "hashed_password",
                 "email": "user1@example.com",
@@ -43,19 +61,47 @@
           "description": "Create a user interface displaying a list of projects",
           "priority": "Medium",
           "status": "In Progress",
-          "assignedTo": null,
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 4,
+                "username": "sdvsdvsdfvad",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
           "startDate": "2024-04-28T09:00:00",
           "dueDate": "2024-05-02T12:00:00"
         }
       ]
     },
     {
-      "id": 2,
+      "id": "3",
       "name": "E-commerce Website Redesign",
       "description": "Revamp the design and functionality of an online store",
       "startDate": "2024-04-10T15:00:00",
       "dueDate": "2024-05-15T00:00:00",
       "status": "Planning",
+      "assignedTo": {
+        "members": [
+          {
+            "userId": 1,
+            "username": "admin",
+            "password": "hashed_password",
+            "email": "admin@example.com",
+            "role": "Admin"
+          }
+        ]
+      },
       "tasks": [
         {
           "id": 3,
@@ -116,12 +162,100 @@
       ]
     },
     {
-      "id": 3,
+      "id": "4",
       "name": "E-commerce Website Redesign",
       "description": "Revamp the design and functionality of an online store",
       "startDate": "2024-04-10T15:00:00",
       "dueDate": "2024-05-15T00:00:00",
       "status": "Planning",
+      "assignedTo": {
+        "members": [
+          {
+            "userId": 1,
+            "username": "admin",
+            "password": "hashed_password",
+            "email": "admin@example.com",
+            "role": "Admin"
+          }
+        ]
+      },
+      "tasks": [
+        {
+          "id": 3,
+          "projectId": 2,
+          "name": "Finalize wireframes and user flow",
+          "description": "Define the user journey and page layouts",
+          "priority": "High",
+          "status": "Done",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "id": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-12T08:00:00",
+          "dueDate": "2024-04-18T17:00:00"
+        },
+        {
+          "id": 4,
+          "projectId": 2,
+          "name": "Select design tools and style guide",
+          "description": "Choose design tools and establish a consistent visual identity",
+          "priority": "Medium",
+          "status": "In Progress",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "id": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-20T14:00:00",
+          "dueDate": "2024-04-27T10:00:00"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Submitting task by 12 AM",
+      "description": "Revamp the design and functionality of an online store",
+      "startDate": "2024-04-10T15:00:00",
+      "dueDate": "2024-05-15T00:00:00",
+      "status": "Planning",
+      "assignedTo": {
+        "members": [
+          {
+            "userId": 1,
+            "username": "admin",
+            "password": "hashed_password",
+            "email": "admin@example.com",
+            "role": "Admin"
+          }
+        ]
+      },
       "tasks": [
         {
           "id": 3,
@@ -184,14 +318,14 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "hashed_password",
       "email": "admin@example.com",
       "role": "Admin"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "user1",
       "password": "hashed_password",
       "email": "user1@example.com",

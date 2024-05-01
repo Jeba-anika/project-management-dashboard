@@ -31,9 +31,9 @@ const ProjectLayout = ({ children }) => {
                             borderRadius: borderRadiusLG,
                         }}
                     >
-                        content
+                        {children}
                     </div>
-                    {children}
+
                 </Content>
                 {/* <Footer
                     style={{

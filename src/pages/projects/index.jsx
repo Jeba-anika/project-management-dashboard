@@ -1,29 +1,32 @@
 import Loader from "@/components/Loader";
 import ProjectCard from "@/components/Projects/ProjectCard";
+import useFetchData from "@/hooks/useFetchData";
 import { Col, Row } from 'antd';
-import { useQuery } from "react-query";
 
 const ProjectsPage = () => {
-    const { isLoading, isError, data, error } = useQuery('projects', async () => {
-        const response = await fetch('http://localhost:3000/projects');
-        return response.json();
-    })
+    const { data, isLoading } = useFetchData({ url: 'http://localhost:3000/projects' })
+
     if (isLoading) {
         return <div className="flex justify-center items-center h-screen"><Loader size={'large'} /></div>
     }
     return (
-        <div>
+        <div className="my-10">
             <Row
+                align='middle'
+                justify='center'
                 gutter={[16, 16]}
             >
                 {
                     data.length > 0 && data?.map(project => <Col key={project.id} className="gutter-row" span={8}>
-                        <ProjectCard project={project} />
+                        <div className="flex justify-center">
+                            <ProjectCard project={project} />
+                        </div>
                     </Col>)
                 }
 
 
             </Row>
+
         </div>
     );
 };
