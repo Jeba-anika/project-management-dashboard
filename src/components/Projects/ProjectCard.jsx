@@ -1,4 +1,5 @@
 import { useProject } from '@/hooks/useProject';
+import useUpdateProject from '@/hooks/useUpdateProject';
 import { DeleteOutlined, DoubleRightOutlined, EditOutlined } from '@ant-design/icons';
 import { Card } from 'antd';
 import { useRouter } from 'next/router';
@@ -13,6 +14,7 @@ const { Meta } = Card;
 
 const ProjectCard = ({ project }) => {
     const queryClient = useQueryClient();
+    const { EditProject } = useUpdateProject()
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const router = useRouter()
@@ -24,21 +26,7 @@ const ProjectCard = ({ project }) => {
         setIsDeleteModalOpen(false)
     }
 
-    const updateProject = async (project) => {
-        const response = await fetch(`http://localhost:3000/projects/${project.id}`, {
-            method: 'PUT',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(project)
-        });
 
-        if (!response.ok) {
-            throw new Error('Error updating project');
-        }
-        const data = await response.json()
-        return data
-    };
 
     const deleteProject = async (projectId) => {
         const response = await fetch(`http://localhost:3000/projects/${projectId}`, {
@@ -54,11 +42,7 @@ const ProjectCard = ({ project }) => {
 
 
 
-    const { mutate: EditProject } = useMutation(updateProject, {
-        onSuccess: () => {
-            queryClient.invalidateQueries('projects'); // re-fetch after update
-        }
-    })
+
     const { mutate: DeleteProject } = useMutation(deleteProject, {
         onSuccess: () => {
             queryClient.invalidateQueries('projects'); // re-fetch after deletion

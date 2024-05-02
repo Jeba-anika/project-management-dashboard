@@ -1,4 +1,5 @@
 import Loader from "@/components/Loader";
+import MainLayout from "@/components/MainLayout/MainLayout";
 import ProjectCard from "@/components/Projects/ProjectCard";
 import useFetchData from "@/hooks/useFetchData";
 import { Col, Row } from 'antd';
@@ -32,3 +33,11 @@ const ProjectsPage = () => {
 };
 
 export default ProjectsPage;
+
+ProjectsPage.getLayout = function getLayout(page) {
+    return (
+        <MainLayout>
+            {page}
+        </MainLayout>
+    )
+}

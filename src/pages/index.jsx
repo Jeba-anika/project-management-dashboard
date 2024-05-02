@@ -1,4 +1,5 @@
 import Login from '@/components/Login/Login';
+import MainLayout from '@/components/MainLayout/MainLayout';
 import { Card } from 'antd';
 
 export default function Home() {
@@ -11,4 +12,11 @@ export default function Home() {
       <Login />
     </Card>
   </div>
+}
+Home.getLayout = function getLayout(page) {
+  return (
+    <MainLayout>
+      {page}
+    </MainLayout>
+  )
 }

@@ -104,12 +104,96 @@
       },
       "tasks": [
         {
-          "id": 3,
+          "id": 7,
           "projectId": 2,
           "name": "Finalize wireframes and user flow",
           "description": "Define the user journey and page layouts",
           "priority": "High",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-12T08:00:00",
+          "dueDate": "2024-04-18T17:00:00"
+        },
+        {
+          "id": 3,
+          "projectId": 2,
+          "name": "3Finalize wireframes and user flow3",
+          "description": "Define the user journey and page layouts",
+          "priority": "High",
           "status": "Done",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "id": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-12T08:00:00",
+          "dueDate": "2024-04-18T17:00:00"
+        },
+        {
+          "id": 5,
+          "projectId": 2,
+          "name": "Finalize wireframes and user flow",
+          "description": "Define the user journey and page layouts",
+          "priority": "High",
+          "status": "In Progress",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "id": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-12T08:00:00",
+          "dueDate": "2024-04-18T17:00:00"
+        },
+        {
+          "id": 6,
+          "projectId": 2,
+          "name": "Finalize wireframes and user flow",
+          "description": "Define the user journey and page layouts",
+          "priority": "High",
+          "status": "In Progress",
           "assignedTo": {
             "members": [
               {
@@ -158,6 +242,218 @@
           },
           "startDate": "2024-04-20T14:00:00",
           "dueDate": "2024-04-27T10:00:00"
+        },
+        {
+          "id": "d4288618-fb53-404c-a277-8726093823dc",
+          "name": "Edit ",
+          "description": "sfvfvvvvvvvvvv",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "58f21562-579b-495e-beaf-cdc9f6ac1cb0",
+          "name": "sdvfdfvd",
+          "description": "fsdfdfd",
+          "status": "To Do",
+          "startDate": "2024-05-22T18:00:00.000Z",
+          "dueDate": "2024-05-23T18:00:00.000Z",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "68d8b5bd-0a19-4fe6-bc52-aad48ab40865",
+          "name": "sdvfdfv",
+          "description": "dfvdfvdfv",
+          "status": "To Do",
+          "startDate": "2024-05-22T18:00:00.000Z",
+          "dueDate": "2024-05-23T18:00:00.000Z",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": 7,
+          "projectId": 2,
+          "name": "Finalize wireframes and user flowss",
+          "description": "Define the user journey and page layouts",
+          "priority": "High",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-12T08:00:00",
+          "dueDate": "2024-04-18T17:00:00"
+        },
+        {
+          "id": "d4288618-fb53-404c-a277-8726093823dc",
+          "name": "Edit ",
+          "description": "Heloonskdjcn",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "projectId": 2,
+          "name": "Finalize wireframes and user flowsdcsd",
+          "description": "Define the user journey and page layouts",
+          "priority": "High",
+          "status": "Done",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "id": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-12T08:00:00",
+          "dueDate": "2024-04-18T17:00:00"
+        },
+        {
+          "id": 3,
+          "projectId": 2,
+          "name": "Finalize wireframes and user flowsdcsd",
+          "description": "Define the user journey and page layoutsssss",
+          "priority": "High",
+          "status": "Done",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "id": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-12T08:00:00",
+          "dueDate": "2024-04-18T17:00:00"
+        },
+        {
+          "id": 3,
+          "projectId": 2,
+          "name": "333Finalize wireframes and user flow3",
+          "description": "Define the user journey and page layouts",
+          "priority": "High",
+          "status": "Done",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "id": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-12T08:00:00",
+          "dueDate": "2024-04-18T17:00:00"
         }
       ]
     },

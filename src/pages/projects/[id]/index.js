@@ -1,9 +1,13 @@
+import MainLayout from "@/components/MainLayout/MainLayout";
 import ProjectLayout from "@/components/Projects/Layout";
 import TaskList from "@/components/Projects/Tasks/TaskList";
+import TaskModal from "@/components/Projects/Tasks/TaskModal";
 import { useProject } from "@/hooks/useProject";
-import { Col, Row } from "antd";
+import useUpdateProject from "@/hooks/useUpdateProject";
+import { FolderAddOutlined } from "@ant-design/icons";
+import { Button, Col, Flex, Form, Row } from "antd";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 
@@ -15,6 +19,9 @@ const ProjectDetail = () => {
     const { selectedProject, setSelectedProject, getToDoTasks, getDoneTasks, getTasksInProgress, toDoTasks, taskInProgress, doneTasks } = useProject()
     const router = useRouter()
     const id = router.query.id
+    const [isAddTaskModalOpen, setIsAddTaskModalOpen] = useState(false)
+    const { EditProject, updatedData } = useUpdateProject()
+    const [form] = Form.useForm();
 
 
 
@@ -69,26 +76,70 @@ const ProjectDetail = () => {
         }
 
     }
+
+
+
+    const handleAddTask = (values) => {
+        const project = { ...selectedProject }
+        project.tasks = [...project.tasks, {
+            id: crypto.randomUUID(),
+            ...values, "assignedTo": {
+                "members": [
+                    {
+                        "userId": 1,
+                        "username": "admin",
+                        "password": "hashed_password",
+                        "email": "admin@example.com",
+                        "role": "Admin"
+                    },
+                    {
+                        "userId": 2,
+                        "username": "user1",
+                        "password": "hashed_password",
+                        "email": "user1@example.com",
+                        "role": "Member"
+                    }
+                ]
+            },
+        }]
+        form.resetFields()
+        EditProject(project)
+        setSelectedProject(updatedData)
+        setIsAddTaskModalOpen(false)
+        form.resetFields()
+    }
     return (
-        <DragDropContext onDragEnd={onDragEnd}>
-            <div className="mx-auto">Tasks</div>
-            <Row gutter={16}>{
-                columns.map(column => <Droppable key={column.id} droppableId={`${column.id}`}>
+        <>
+            <DragDropContext onDragEnd={onDragEnd}>
+                <div className="mx-auto mb-8">
+                    <Flex gap="middle" justify="space-between">
+                        <div className="text-xl font-serif font-bold">
+                            Tasks
+                        </div>
 
-                    {(droppableProvided, droppableSnapshot) => (
-                        <Col ref={droppableProvided.innerRef}
-                            {...droppableProvided.droppableProps} className="gutter-row" span={8}>
-                            <div >
-                                <TaskList list={column?.data}></TaskList>
-                            </div>
-                            {droppableProvided.placeholder}
-                        </Col>
-                    )}
+                        <Button onClick={() => setIsAddTaskModalOpen(true)} icon={<FolderAddOutlined />}>Add Task</Button>
 
-                </Droppable >)
-            }</Row>
+                    </Flex>
+                </div>
+                <Row gutter={16}>{
+                    columns.map(column => <Droppable key={column.id} droppableId={`${column.id}`}>
 
-        </DragDropContext >
+                        {(droppableProvided, droppableSnapshot) => (
+                            <Col ref={droppableProvided.innerRef}
+                                {...droppableProvided.droppableProps} className="gutter-row" span={8}>
+                                <div >
+                                    <TaskList columnName={column?.columnName} list={column?.data}></TaskList>
+                                </div>
+                                {droppableProvided.placeholder}
+                            </Col>
+                        )}
+
+                    </Droppable >)
+                }</Row>
+
+            </DragDropContext >
+            <TaskModal isAdd={true} isAddOpen={isAddTaskModalOpen} onAddSubmitForm={handleAddTask} handleCancel={() => setIsAddTaskModalOpen(false)} form={form} />
+        </>
     );
 };
 
@@ -96,8 +147,10 @@ export default ProjectDetail;
 
 ProjectDetail.getLayout = function getLayout(page) {
     return (
-        <ProjectLayout>
-            {page}
-        </ProjectLayout>
+        <MainLayout>
+            <ProjectLayout>
+                {page}
+            </ProjectLayout>
+        </MainLayout>
     )
 }
