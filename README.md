@@ -1,8 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[Project Management Dashboard](https://project-management-dashboard-theta.vercel.app/)
 
-## Getting Started
+## Project Management Dashboard
 
-First, run the development server:
+- The Live Site Link requires the json server to run on [localhost](http://localhost:3000/). For this, you need to clone this repository. provide 'npm install' command to install the dependencies. Then run the script => 'npm run server'. And the visit the live site link to see the website with the Mock server data.
 
 ```bash
 npm run dev
