@@ -2,7 +2,8 @@ import Loader from "@/components/Loader";
 import MainLayout from "@/components/MainLayout/MainLayout";
 import ProjectCard from "@/components/Projects/ProjectCard";
 import useFetchData from "@/hooks/useFetchData";
-import { Col, Row } from 'antd';
+import { FolderAddOutlined } from "@ant-design/icons";
+import { Button, Col, Row } from 'antd';
 
 const ProjectsPage = () => {
     const { data, isLoading } = useFetchData({ url: 'http://localhost:3000/projects', key: 'projects' })
@@ -11,7 +12,8 @@ const ProjectsPage = () => {
         return <div className="flex justify-center items-center h-screen"><Loader size={'large'} /></div>
     }
     return (
-        <div className="my-10">
+        <div className="my-10 px-10">
+            <div className="text-start px-20 text-bold"><Button icon={<FolderAddOutlined />}>Add Project</Button></div>
             <Row
                 align='middle'
                 justify='center'
