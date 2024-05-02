@@ -5,10 +5,11 @@ import TaskModal from "@/components/Projects/Tasks/TaskModal";
 import { useProject } from "@/hooks/useProject";
 import useUpdateProject from "@/hooks/useUpdateProject";
 import { FolderAddOutlined } from "@ant-design/icons";
-import { Button, Col, Flex, Form, Row } from "antd";
+import { Button, Col, Flex, Form, Input, Row } from "antd";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+const { Search } = Input;
 
 
 
@@ -114,6 +115,17 @@ const ProjectDetail = () => {
         })
 
     }
+
+    const onSearch = (value, _e, info) => {
+        if (value) {
+            const selectedP = { ...selectedProject }
+            const tasks = selectedP.tasks
+            const filteredTask = tasks.filter(task => task.name.split(' ').join('').toLowerCase().includes(value.split(' ').join('').toLowerCase()))
+            selectedP.tasks = filteredTask
+            setSelectedProject(selectedP)
+        }
+    }
+
     return (
         <>
             <DragDropContext onDragEnd={onDragEnd}>
@@ -122,8 +134,16 @@ const ProjectDetail = () => {
                         <div className="text-xl font-serif font-bold">
                             Tasks
                         </div>
-
-                        <Button onClick={() => setIsAddTaskModalOpen(true)} icon={<FolderAddOutlined />}>Add Task</Button>
+                        <div className="flex gap-3">
+                            <Search
+                                placeholder="input search text"
+                                onSearch={onSearch}
+                                style={{
+                                    width: 200,
+                                }}
+                            />
+                            <Button onClick={() => setIsAddTaskModalOpen(true)} icon={<FolderAddOutlined />}>Add Task</Button>
+                        </div>
 
                     </Flex>
                 </div>
