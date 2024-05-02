@@ -5,7 +5,7 @@ import useFetchData from "@/hooks/useFetchData";
 import { Col, Row } from 'antd';
 
 const ProjectsPage = () => {
-    const { data, isLoading } = useFetchData({ url: 'http://localhost:3000/projects' })
+    const { data, isLoading } = useFetchData({ url: 'http://localhost:3000/projects', key: 'projects' })
 
     if (isLoading) {
         return <div className="flex justify-center items-center h-screen"><Loader size={'large'} /></div>

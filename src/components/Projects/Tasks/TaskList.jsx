@@ -1,3 +1,4 @@
+import ConfirmModal from '@/components/ConfirmModal/ConfirmModal';
 import { useProject } from '@/hooks/useProject';
 import useUpdateProject from '@/hooks/useUpdateProject';
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
@@ -8,6 +9,7 @@ import TaskModal from './TaskModal';
 
 const TaskList = ({ list, columnName }) => {
     const [isEditTaskModalOpen, setIsEditTaskModalOpen] = useState(false)
+    const [isDeleteTaskModalOpen, setIsDeleteTaskModalOpen] = useState(false)
     const [selectedTask, setSelectedTask] = useState({})
     const [form] = Form.useForm();
     const { selectedProject, setSelectedProject } = useProject()
@@ -16,18 +18,33 @@ const TaskList = ({ list, columnName }) => {
     const handleEditTask = (values) => {
         const project = { ...selectedProject }
         const tasks = [...project.tasks]
+        const taskIndex = tasks.findIndex(task => task.id === selectedTask.id);
+        if (taskIndex === -1) {
+            console.error('Task not found');
+            return;
+        }
         const selectedT = tasks.find(task => task.id === selectedTask.id)
-        project.tasks = [...project.tasks, {
+        tasks[taskIndex] = {
             ...selectedT,
             name: values.name,
             description: values.description,
             status: values.status
-        }]
-        EditProject(project)
-        setSelectedProject(updatedData)
-        setIsEditTaskModalOpen(false)
-        form.resetFields()
-        setSelectedTask({})
+        }
+        project.tasks = [...tasks]
+
+        EditProject(project, {
+            onSuccess: (updatedProject) => {
+                setSelectedProject(updatedProject)
+                setIsEditTaskModalOpen(false)
+                form.resetFields()
+                setSelectedTask({})
+            },
+            onError: (error) => {
+                console.error('Mutation failed:', error);
+            },
+        })
+
+
     }
     const handleDeleteTask = () => {
         const project = { ...selectedProject }
@@ -38,8 +55,15 @@ const TaskList = ({ list, columnName }) => {
         console.log(selectedT)
         project.tasks = [...selectedT]
         console.log(project)
-        EditProject(project)
-        setSelectedProject(updatedData)
+        EditProject(project, {
+            onSuccess: (updatedProject) => {
+                setSelectedProject(updatedProject)
+
+            },
+            onError: (error) => {
+                console.error('Mutation failed:', error);
+            },
+        })
 
     }
 
@@ -70,7 +94,7 @@ const TaskList = ({ list, columnName }) => {
                                             setSelectedTask(item)
                                         }} />
                                         <Button icon={<DeleteOutlined className='text-red-500' onClick={() => {
-                                            handleDeleteTask()
+                                            setIsDeleteTaskModalOpen(true)
                                             setSelectedTask(item)
                                         }} />} />
                                     </div>} style={{
@@ -81,6 +105,10 @@ const TaskList = ({ list, columnName }) => {
                 )}
             />
             <TaskModal initialVals={selectedTask} isAdd={false} isEditOpen={isEditTaskModalOpen} onEditSubmitForm={handleEditTask} handleCancel={() => setIsEditTaskModalOpen(false)} form={form} />
+            <ConfirmModal isOpen={isDeleteTaskModalOpen} handleCancel={() => setIsDeleteTaskModalOpen(false)} handleOk={() => {
+                handleDeleteTask()
+                setIsDeleteTaskModalOpen(false)
+            }} ><p>Are you sure you want to delete the task?</p></ConfirmModal>
         </>
     );
 };

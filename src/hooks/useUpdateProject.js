@@ -15,11 +15,13 @@ const useUpdateProject = () => {
             throw new Error('Error updating project');
         }
         const data = await response.json()
+        console.log(data)
         return data
     };
     const { mutate: EditProject, data: updatedData } = useMutation(updateProject, {
-        onSuccess: () => {
+        onSuccess: (data) => {
             queryClient.invalidateQueries('projects'); // re-fetch after update
+            console.log('Update successful:', data)
         }
     })
 

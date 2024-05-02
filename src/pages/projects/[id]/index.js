@@ -34,13 +34,13 @@ const ProjectDetail = () => {
             }
         }
         fetchData()
-    }, [id, setSelectedProject])
+    }, [id, setSelectedProject,])
 
     useEffect(() => {
         getToDoTasks(selectedProject)
         getDoneTasks(selectedProject)
         getTasksInProgress(selectedProject)
-    }, [getToDoTasks, selectedProject, getDoneTasks, getTasksInProgress])
+    }, [getToDoTasks, selectedProject, getDoneTasks, getTasksInProgress, updatedData])
 
 
     const columns = [
@@ -79,7 +79,7 @@ const ProjectDetail = () => {
 
 
 
-    const handleAddTask = (values) => {
+    const handleAddTask = async (values) => {
         const project = { ...selectedProject }
         project.tasks = [...project.tasks, {
             id: crypto.randomUUID(),
@@ -102,11 +102,17 @@ const ProjectDetail = () => {
                 ]
             },
         }]
-        form.resetFields()
-        EditProject(project)
-        setSelectedProject(updatedData)
-        setIsAddTaskModalOpen(false)
-        form.resetFields()
+        EditProject(project, {
+            onSuccess: (updatedProject) => {
+                setSelectedProject(updatedProject);
+                setIsAddTaskModalOpen(false);
+                form.resetFields();
+            },
+            onError: (error) => {
+                console.error('Mutation failed:', error);
+            },
+        })
+
     }
     return (
         <>
