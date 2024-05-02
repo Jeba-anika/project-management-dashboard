@@ -17,10 +17,10 @@ npm run server
 ```
 
 - The packages that is used in this project:
-  = react-query for data fetching
-  = zustand for global state management
-  = react-beautiful-dnd for drag and drop feature implementation
-  = antd and taiwindCSS for UI Design
-  = json server for mock API
+  -- react-query for data fetching
+  -- zustand for global state management
+  -- react-beautiful-dnd for drag and drop feature implementation
+  -- antd and taiwindCSS for UI Design
+  -- json server for mock API
 
 - The website is still under development.
