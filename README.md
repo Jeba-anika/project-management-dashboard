@@ -1,8 +1,10 @@
-[Project Management Dashboard](https://project-management-dashboard-theta.vercel.app/)
+[Project Management Dashboard](https://project-management-dashboard-theta.vercel.app/) (Live Site Link)
 
 ## Project Management Dashboard
 
-- The Live Site Link requires the json server to run on [localhost](http://localhost:3000/). For this, you need to clone this repository. provide 'npm install' command to install the dependencies.
+This website allows users to handle their projects efficiently. They can create, update, delete their tasks under any project smoothly. Users can also change the status of the task and improve their efficiency of doing any project.
+
+- The Live Site Link requires the json server to run on [localhost](http://localhost:3000/) on 3000 port. For this, you need to clone this repository. provide 'npm install' command to install the dependencies.
 
 ```bash
 npm install
@@ -14,29 +16,11 @@ Then run the script => 'npm run server' to run the json server.
 npm run server
 ```
 
-And then visit the live site link to see the website with the Mock server data.
+- The packages that is used in this project:
+  = react-query for data fetching
+  = zustand for global state management
+  = react-beautiful-dnd for drag and drop feature implementation
+  = antd and taiwindCSS for UI Design
+  = json server for mock API
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- The website is still under development.
