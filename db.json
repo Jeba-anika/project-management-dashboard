@@ -1595,6 +1595,467 @@
           }
         }
       ]
+    },
+    {
+      "id": "7",
+      "name": "Redesigning the landing page",
+      "description": "Redesigning the landing page to make an attractive look.",
+      "startDate": "2024-04-10T15:00:00",
+      "dueDate": "2024-05-15T00:00:00",
+      "status": "Planning",
+      "assignedTo": {
+        "members": [
+          {
+            "userId": 1,
+            "username": "admin",
+            "password": "hashed_password",
+            "email": "admin@example.com",
+            "role": "Admin"
+          }
+        ]
+      },
+      "tasks": [
+        {
+          "id": 3,
+          "projectId": 2,
+          "name": "Finalize wireframes and user flow",
+          "description": "Define the user journey and page layouts",
+          "priority": "High",
+          "status": "Done",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "id": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-12T08:00:00",
+          "dueDate": "2024-04-18T17:00:00"
+        },
+        {
+          "id": 4,
+          "projectId": 2,
+          "name": "Select design tools and style guide",
+          "description": "Choose design tools and establish a consistent visual identity",
+          "priority": "Medium",
+          "status": "In Progress",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "id": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          },
+          "startDate": "2024-04-20T14:00:00",
+          "dueDate": "2024-04-27T10:00:00"
+        },
+        {
+          "id": "f5851d0d-208e-4173-a7b9-992182a3c136",
+          "name": "DO IT",
+          "description": "DO IT",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "7562501e-64b4-4c44-8423-b04582d9e586",
+          "name": "DO IT 2",
+          "description": "DO IR@",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "da44cd9c-edda-4ce4-81d3-d87ccf6ffb82",
+          "name": "DO TI23",
+          "description": "dfvbdfvdfv",
+          "status": "In Progress",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "8b461ee4-482c-48d3-9eb5-96cae7d433e8",
+          "name": "DO HGVH",
+          "description": "VDDD",
+          "status": "Done",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "db0629ac-d334-480c-9706-62746ac31036",
+          "name": "DO HGVH",
+          "description": "VDDD",
+          "status": "Done",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "561f4a8f-43fa-4ece-9718-bef7ca8e2e44",
+          "name": "DO HGVH",
+          "description": "VDDD",
+          "status": "Done",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "92a9b0c9-0a75-4f53-ad89-4daeb687ffb7",
+          "name": "DHJGJH",
+          "description": "DJHSGHJGD",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "9cedba9c-ec99-46c3-a827-1463275a5445",
+          "name": "VSDD",
+          "description": "VSDDSF",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "51c36979-1b09-4a99-a92d-a0b2d958f44c",
+          "name": "TEST 1",
+          "description": "VDSSV",
+          "status": "Done",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "5c38dcf5-0f35-488f-978e-f5ff2997a835",
+          "name": "GFSSDF",
+          "description": "VSVSDV",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "c98ed9fb-828d-4090-b59b-a22a6f0a42f5",
+          "name": "GFSSDF",
+          "description": "VSVSDV",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "d118eea7-5f3c-433c-8484-accf5e32c2f6",
+          "name": "DSDCSDC",
+          "description": "CDCDSDF",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "b1185faa-5ee3-4ac5-9e4e-7fff5e115f46",
+          "name": "CVSDCDS",
+          "description": "CVSDVDS",
+          "status": "In Progress",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "09df64be-8e8c-4721-8c0a-68b14d576ca4",
+          "name": "CVSDCDS",
+          "description": "CVSDVDS",
+          "status": "In Progress",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "caab7140-dab6-4d20-a23a-ffd05e2838e5",
+          "name": "10.31 TEST",
+          "description": "10.31",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        },
+        {
+          "id": "c9869920-2284-46b6-a2fa-ae83ec664aa1",
+          "name": "10.33",
+          "description": "10.33",
+          "status": "To Do",
+          "assignedTo": {
+            "members": [
+              {
+                "userId": 1,
+                "username": "admin",
+                "password": "hashed_password",
+                "email": "admin@example.com",
+                "role": "Admin"
+              },
+              {
+                "userId": 2,
+                "username": "user1",
+                "password": "hashed_password",
+                "email": "user1@example.com",
+                "role": "Member"
+              }
+            ]
+          }
+        }
+      ]
     }
   ],
   "users": [
