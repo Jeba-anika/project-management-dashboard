@@ -1,7 +1,7 @@
 import { useProject } from '@/hooks/useProject';
 import useUpdateProject from '@/hooks/useUpdateProject';
 import { DeleteOutlined, DoubleRightOutlined, EditOutlined } from '@ant-design/icons';
-import { Card } from 'antd';
+import { Card, Popover } from 'antd';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
@@ -68,12 +68,13 @@ const ProjectCard = ({ project }) => {
             }}
 
             actions={[
-                <DoubleRightOutlined key="setting" onClick={() => {
+                <Popover placement="bottom" content={<p className='text-xs'>Details</p>}><DoubleRightOutlined key="details" onClick={() => {
                     setSelectedProject(project)
                     router.push(`/projects/${project.id}`)
-                }} />,
-                <EditOutlined key="edit" onClick={() => setIsEditModalOpen(true)} />,
-                <DeleteOutlined key="ellipsis" onClick={() => setIsDeleteModalOpen(true)} />,
+                }} /></Popover>
+                ,
+                <Popover placement="bottom" content={<p className='text-xs'>Edit</p>}><EditOutlined key="edit" onClick={() => setIsEditModalOpen(true)} /></Popover>,
+                <Popover placement="bottom" content={<p className='text-xs text-red-700'>Delete</p>}><DeleteOutlined key="delete" onClick={() => setIsDeleteModalOpen(true)} /></Popover>,
             ]}
         >
             <Meta

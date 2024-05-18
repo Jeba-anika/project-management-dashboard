@@ -1,10 +1,11 @@
+import CommonSelectDropdown from '@/components/shared/CommonSelectDropdown/CommonSelectDropdown';
 import { Button, DatePicker, Form, Input, Modal, Select } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 const { Option } = Select;
 
 
-const TaskModal = ({ isAdd, isAddOpen, isEditOpen, handleCancel, onAddSubmitForm, onEditSubmitForm, form, initialVals }) => {
-
+const TaskModal = ({ isAdd, usersData, handleChangeMember, isAddOpen, isEditOpen, handleCancel, onAddSubmitForm, onEditSubmitForm, form, initialVals }) => {
+    console.log(usersData)
     const initialValues = initialVals ?? {
         name: '',
         description: '',
@@ -80,11 +81,22 @@ const TaskModal = ({ isAdd, isAddOpen, isEditOpen, handleCancel, onAddSubmitForm
                     </Select>
                 </Form.Item>
 
-                <Form.Item label="Start Date">
+                <Form.Item label="Start Date" name="startDate" rules={[
+                    {
+                        required: true,
+                    },
+                ]}>
                     <DatePicker />
                 </Form.Item>
-                <Form.Item label="Due Date">
+                <Form.Item label="Due Date" name="dueDate" rules={[
+                    {
+                        required: true,
+                    },
+                ]}>
                     <DatePicker />
+                </Form.Item>
+                <Form.Item label="Assigned To:">
+                    <CommonSelectDropdown options={usersData} handleChangeOption={handleChangeMember} />
                 </Form.Item>
 
 

@@ -16,14 +16,14 @@ const { Search } = Input;
 
 
 const ProjectDetail = () => {
-    //const [state, setState] = useState(initialData);
     const { selectedProject, setSelectedProject, getToDoTasks, getDoneTasks, getTasksInProgress, toDoTasks, taskInProgress, doneTasks } = useProject()
     const router = useRouter()
     const id = router.query.id
     const [isAddTaskModalOpen, setIsAddTaskModalOpen] = useState(false)
+    const [projectAssignedMembers, setProjectAssignedMembers] = useState([])
+    const [selectedMembers, setSelectedMembers] = useState([])
     const { EditProject, updatedData } = useUpdateProject()
     const [form] = Form.useForm();
-
 
 
     useEffect(() => {
@@ -32,6 +32,8 @@ const ProjectDetail = () => {
             const data = await res.json()
             if (data) {
                 setSelectedProject(data)
+                const usersOptions = data?.assignedTo?.members?.map((user, index) => { return { label: user.username, value: user.email } })
+                setProjectAssignedMembers(usersOptions)
             }
         }
         fetchData()
@@ -64,7 +66,6 @@ const ProjectDetail = () => {
 
 
     const onDragEnd = (result) => {
-        console.log(result)
         if (!result.destination) {
             return;
         }
@@ -112,28 +113,26 @@ const ProjectDetail = () => {
 
     }
 
+    const handleAssignedUsersChange = (value) => {
+        const members = []
+        for (let i = 0; i < value.length; i++) {
+            const filtered = selectedProject?.assignedTo?.members.filter(user => user.email === value[i])
+            members.push(filtered[0])
+        }
+        setSelectedMembers(members)
 
+    };
 
     const handleAddTask = async (values) => {
         const project = { ...selectedProject }
         project.tasks = [...project.tasks, {
             id: crypto.randomUUID(),
+            startDate: new Date(values.startDate.$d).toISOString(),
+            dueDate: new Date(values.dueDate.$d).toISOString(),
+            projectId: selectedProject.id,
             ...values, "assignedTo": {
                 "members": [
-                    {
-                        "userId": 1,
-                        "username": "admin",
-                        "password": "hashed_password",
-                        "email": "admin@example.com",
-                        "role": "Admin"
-                    },
-                    {
-                        "userId": 2,
-                        "username": "user1",
-                        "password": "hashed_password",
-                        "email": "user1@example.com",
-                        "role": "Member"
-                    }
+                    ...selectedMembers
                 ]
             },
         }]
@@ -141,6 +140,7 @@ const ProjectDetail = () => {
             onSuccess: (updatedProject) => {
                 setSelectedProject(updatedProject);
                 setIsAddTaskModalOpen(false);
+                setSelectedMembers([])
                 form.resetFields();
             },
             onError: (error) => {
@@ -160,10 +160,13 @@ const ProjectDetail = () => {
         }
     }
 
+
+
     return (
         <>
             <DragDropContext onDragEnd={onDragEnd}>
                 <div className="mx-auto mb-8">
+                    <h1>{selectedProject.name}</h1>
                     <Flex gap="middle" justify="space-between">
                         <div className="text-xl font-serif font-bold">
                             Tasks
@@ -198,7 +201,7 @@ const ProjectDetail = () => {
                 }</Row>
 
             </DragDropContext >
-            <TaskModal isAdd={true} isAddOpen={isAddTaskModalOpen} onAddSubmitForm={handleAddTask} handleCancel={() => setIsAddTaskModalOpen(false)} form={form} />
+            <TaskModal isAdd={true} usersData={projectAssignedMembers} handleChangeMember={handleAssignedUsersChange} isAddOpen={isAddTaskModalOpen} onAddSubmitForm={handleAddTask} handleCancel={() => { setIsAddTaskModalOpen(false); setSelectedMembers([]) }} form={form} />
         </>
     );
 };
