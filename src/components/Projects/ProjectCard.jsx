@@ -5,8 +5,8 @@ import { Card } from 'antd';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
-import ConfirmModal from '../ConfirmModal/ConfirmModal';
-import ProjectEditModal from './ProjectEditModal';
+import ConfirmModal from '../shared/ConfirmModal/ConfirmModal';
+import ProjectModal from './ProjectModal';
 const { Meta } = Card;
 
 
@@ -84,7 +84,7 @@ const ProjectCard = ({ project }) => {
                 <p>Status: {project.status}</p>
             </div>
         </Card>
-        <ProjectEditModal selectedProject={project} isOpen={isEditModalOpen} handleCancel={handleCancelEditModal} onSubmitForm={handleEditProject} />
+        <ProjectModal isAdd={false} selectedProject={project} isEditOpen={isEditModalOpen} handleCancel={handleCancelEditModal} onSubmitForm={handleEditProject} />
         <ConfirmModal isOpen={isDeleteModalOpen} handleCancel={handleCancelDeleteModal} handleOk={handleDeleteProject}>{confirmDialogContent}</ConfirmModal>
     </>
 };

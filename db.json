@@ -107,7 +107,7 @@
     {
       "id": "3",
       "name": "E-commerce Website Redesign",
-      "description": "Revamp the design and functionality of an online store",
+      "description": "Revamp the design and functionality of an online store.",
       "startDate": "2024-04-10T15:00:00",
       "dueDate": "2024-05-15T00:00:00",
       "status": "Planning",
@@ -264,30 +264,6 @@
           "dueDate": "2024-04-27T10:00:00"
         },
         {
-          "id": "d4288618-fb53-404c-a277-8726093823dc",
-          "name": "Edit ",
-          "description": "sfvfvvvvvvvvvv",
-          "status": "To Do",
-          "assignedTo": {
-            "members": [
-              {
-                "userId": 1,
-                "username": "admin",
-                "password": "hashed_password",
-                "email": "admin@example.com",
-                "role": "Admin"
-              },
-              {
-                "userId": 2,
-                "username": "user1",
-                "password": "hashed_password",
-                "email": "user1@example.com",
-                "role": "Member"
-              }
-            ]
-          }
-        },
-        {
           "id": "58f21562-579b-495e-beaf-cdc9f6ac1cb0",
           "name": "sdvfdfvd",
           "description": "fsdfdfd",
@@ -366,30 +342,6 @@
           },
           "startDate": "2024-04-12T08:00:00",
           "dueDate": "2024-04-18T17:00:00"
-        },
-        {
-          "id": "d4288618-fb53-404c-a277-8726093823dc",
-          "name": "Edit ",
-          "description": "Heloonskdjcn",
-          "status": "To Do",
-          "assignedTo": {
-            "members": [
-              {
-                "userId": 1,
-                "username": "admin",
-                "password": "hashed_password",
-                "email": "admin@example.com",
-                "role": "Admin"
-              },
-              {
-                "userId": 2,
-                "username": "user1",
-                "password": "hashed_password",
-                "email": "user1@example.com",
-                "role": "Member"
-              }
-            ]
-          }
         },
         {
           "id": 3,
@@ -474,78 +426,6 @@
           },
           "startDate": "2024-04-12T08:00:00",
           "dueDate": "2024-04-18T17:00:00"
-        },
-        {
-          "id": "3c18ea79-0892-4c05-bcf6-184e8432f38e",
-          "name": "Test",
-          "description": "dfgdfgdf",
-          "status": "To Do",
-          "assignedTo": {
-            "members": [
-              {
-                "userId": 1,
-                "username": "admin",
-                "password": "hashed_password",
-                "email": "admin@example.com",
-                "role": "Admin"
-              },
-              {
-                "userId": 2,
-                "username": "user1",
-                "password": "hashed_password",
-                "email": "user1@example.com",
-                "role": "Member"
-              }
-            ]
-          }
-        },
-        {
-          "id": "7ccbf4e0-e9b4-4bb9-b056-8879f47c4fa0",
-          "name": "Trsjbvjkcshds",
-          "description": "fsdvsdf",
-          "status": "To Do",
-          "assignedTo": {
-            "members": [
-              {
-                "userId": 1,
-                "username": "admin",
-                "password": "hashed_password",
-                "email": "admin@example.com",
-                "role": "Admin"
-              },
-              {
-                "userId": 2,
-                "username": "user1",
-                "password": "hashed_password",
-                "email": "user1@example.com",
-                "role": "Member"
-              }
-            ]
-          }
-        },
-        {
-          "id": "33ac0686-7387-4ed3-ad67-4fec7448e11a",
-          "name": "dsvsdvs",
-          "description": "dvsdvsdv",
-          "status": "To Do",
-          "assignedTo": {
-            "members": [
-              {
-                "userId": 1,
-                "username": "admin",
-                "password": "hashed_password",
-                "email": "admin@example.com",
-                "role": "Admin"
-              },
-              {
-                "userId": 2,
-                "username": "user1",
-                "password": "hashed_password",
-                "email": "user1@example.com",
-                "role": "Member"
-              }
-            ]
-          }
         },
         {
           "id": "c3c98152-2f3d-4946-87a0-778e67701dfe",
@@ -1235,54 +1115,6 @@
           }
         },
         {
-          "id": "7562501e-64b4-4c44-8423-b04582d9e586",
-          "name": "DO IT 2",
-          "description": "DO IR@",
-          "status": "To Do",
-          "assignedTo": {
-            "members": [
-              {
-                "userId": 1,
-                "username": "admin",
-                "password": "hashed_password",
-                "email": "admin@example.com",
-                "role": "Admin"
-              },
-              {
-                "userId": 2,
-                "username": "user1",
-                "password": "hashed_password",
-                "email": "user1@example.com",
-                "role": "Member"
-              }
-            ]
-          }
-        },
-        {
-          "id": "da44cd9c-edda-4ce4-81d3-d87ccf6ffb82",
-          "name": "DO TI23",
-          "description": "dfvbdfvdfv",
-          "status": "In Progress",
-          "assignedTo": {
-            "members": [
-              {
-                "userId": 1,
-                "username": "admin",
-                "password": "hashed_password",
-                "email": "admin@example.com",
-                "role": "Admin"
-              },
-              {
-                "userId": 2,
-                "username": "user1",
-                "password": "hashed_password",
-                "email": "user1@example.com",
-                "role": "Member"
-              }
-            ]
-          }
-        },
-        {
           "id": "8b461ee4-482c-48d3-9eb5-96cae7d433e8",
           "name": "DO HGVH",
           "description": "VDDD",
@@ -1451,58 +1283,10 @@
           }
         },
         {
-          "id": "c98ed9fb-828d-4090-b59b-a22a6f0a42f5",
-          "name": "GFSSDF",
-          "description": "VSVSDV",
-          "status": "To Do",
-          "assignedTo": {
-            "members": [
-              {
-                "userId": 1,
-                "username": "admin",
-                "password": "hashed_password",
-                "email": "admin@example.com",
-                "role": "Admin"
-              },
-              {
-                "userId": 2,
-                "username": "user1",
-                "password": "hashed_password",
-                "email": "user1@example.com",
-                "role": "Member"
-              }
-            ]
-          }
-        },
-        {
           "id": "d118eea7-5f3c-433c-8484-accf5e32c2f6",
           "name": "DSDCSDC",
           "description": "CDCDSDF",
           "status": "To Do",
-          "assignedTo": {
-            "members": [
-              {
-                "userId": 1,
-                "username": "admin",
-                "password": "hashed_password",
-                "email": "admin@example.com",
-                "role": "Admin"
-              },
-              {
-                "userId": 2,
-                "username": "user1",
-                "password": "hashed_password",
-                "email": "user1@example.com",
-                "role": "Member"
-              }
-            ]
-          }
-        },
-        {
-          "id": "b1185faa-5ee3-4ac5-9e4e-7fff5e115f46",
-          "name": "CVSDCDS",
-          "description": "CVSDVDS",
-          "status": "In Progress",
           "assignedTo": {
             "members": [
               {
@@ -2517,6 +2301,26 @@
           }
         }
       ]
+    },
+    {
+      "id": "7ce77b29-a16b-4f0c-a7e9-1385e58f0a0e",
+      "name": "aaa",
+      "description": "aaaa",
+      "startDate": "2024-05-21T18:00:00.000Z",
+      "dueDate": "2024-05-30T18:00:00.000Z",
+      "status": "Planning",
+      "assignedTo": {
+        "members": [
+          {
+            "id": "2",
+            "username": "user1",
+            "password": "hashed_password",
+            "email": "user1@example.com",
+            "role": "Member"
+          }
+        ]
+      },
+      "tasks": []
     }
   ],
   "users": [

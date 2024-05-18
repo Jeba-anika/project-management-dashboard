@@ -1,4 +1,4 @@
-import ConfirmModal from '@/components/ConfirmModal/ConfirmModal';
+import ConfirmModal from '@/components/shared/ConfirmModal/ConfirmModal';
 import { useProject } from '@/hooks/useProject';
 import useUpdateProject from '@/hooks/useUpdateProject';
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
