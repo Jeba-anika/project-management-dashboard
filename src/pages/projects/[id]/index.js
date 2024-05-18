@@ -74,6 +74,10 @@ const ProjectDetail = () => {
             //finding destination and source column index
             const destinationColumnIx = columns.findIndex(column => column.id === Number(destination.droppableId))
             const sourceColumnIx = columns.findIndex(column => column.id === Number(source.droppableId))
+            const otherColumnIx = columns.findIndex(column => (column.id !== Number(source.droppableId) && column.id !== Number(destination.droppableId)))
+            const otherColumnData = columns[otherColumnIx].data
+
+
             const destinationColumnName = columns[destinationColumnIx].columnName//destination column name
             const destColData = columns[destinationColumnIx].data//destination column data
             const sourceColData = columns[sourceColumnIx].data//source column data
@@ -86,7 +90,21 @@ const ProjectDetail = () => {
             const firstSlicedDest = destColData.slice(0, destination.index)
             const lastSlicedDest = destColData.slice(destination.index)
             columns[destinationColumnIx].data = [...firstSlicedDest, { ...sourceData[0], status: destinationColumnName }, ...lastSlicedDest]
+            const editedProject = {
+                ...selectedProject,
+                tasks: [...firstSlicedDest, { ...sourceData[0], status: destinationColumnName }, ...lastSlicedDest, ...newSourceColData, ...otherColumnData]
+            }
 
+            console.log(editedProject)
+            EditProject(editedProject, {
+                onSuccess: (updatedProject) => {
+                    setSelectedProject(updatedProject);
+
+                },
+                onError: (error) => {
+                    console.error('Mutation failed:', error);
+                },
+            })
 
         } else {
             console.log(`Item reordered within column ${source.droppableId}`);
