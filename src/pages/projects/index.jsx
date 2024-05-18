@@ -65,7 +65,7 @@ const ProjectsPage = () => {
                 gutter={[16, 16]}
             >
                 {
-                    data.length > 0 && data?.map(project => <Col key={project.id} className="gutter-row" span={8}>
+                    data.length > 0 && data?.map(project => <Col key={project.id} className="gutter-row" xs={20} sm={16} md={12} lg={8} xl={8}>
                         <div className="flex justify-center">
                             <ProjectCard project={project} />
                         </div>

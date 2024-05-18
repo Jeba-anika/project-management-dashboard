@@ -69,9 +69,25 @@ const ProjectDetail = () => {
             return;
         }
         const { source, destination } = result;
-
         if (source.droppableId !== destination.droppableId) {
             console.log(`Item moved from column ${source.droppableId} to column ${destination.droppableId}`);
+            //finding destination and source column index
+            const destinationColumnIx = columns.findIndex(column => column.id === Number(destination.droppableId))
+            const sourceColumnIx = columns.findIndex(column => column.id === Number(source.droppableId))
+            const destinationColumnName = columns[destinationColumnIx].columnName//destination column name
+            const destColData = columns[destinationColumnIx].data//destination column data
+            const sourceColData = columns[sourceColumnIx].data//source column data
+            const sourceData = sourceColData.filter(data => data.id === result.draggableId)//dragged data from source column
+            const newSourceColData = sourceColData.filter(data => data.id !== result.draggableId)//remaining data from source column
+            //final source column data
+            columns[sourceColumnIx].data = [...newSourceColData]
+
+            //final destination column data
+            const firstSlicedDest = destColData.slice(0, destination.index)
+            const lastSlicedDest = destColData.slice(destination.index)
+            columns[destinationColumnIx].data = [...firstSlicedDest, { ...sourceData[0], status: destinationColumnName }, ...lastSlicedDest]
+
+
         } else {
             console.log(`Item reordered within column ${source.droppableId}`);
         }
