@@ -1,13 +1,13 @@
 import MainLayout from "@/components/MainLayout/MainLayout";
 import ProjectLayout from "@/components/Projects/Layout";
 import { useProject } from "@/hooks/useProject";
-import { Avatar, List } from 'antd';
+import { List } from 'antd';
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react';
 
 
-const TeamMembersPage = () => {
-    const [teamMembers, setTeamMembers] = useState([])
+const RecentActivities = () => {
+    const [recentActivities, setRecentActivities] = useState([])
     const { selectedProject, setSelectedProject } = useProject()
     const router = useRouter()
     const id = router.query.id
@@ -26,31 +26,32 @@ const TeamMembersPage = () => {
     }, [id, setSelectedProject])
 
     useEffect(() => {
-        if (selectedProject?.assignedTo) {
-            const assignedMembers = selectedProject?.assignedTo?.members
+        if (selectedProject?.tasks) {
+            const tasks = selectedProject?.tasks
+            const filtered = tasks.filter(task => task.status === 'Done')
             console.log(selectedProject)
-            setTeamMembers(assignedMembers)
+            setRecentActivities(filtered)
         }
-    }, [selectedProject, selectedProject?.assignedTo])
+    }, [selectedProject, selectedProject?.tasks])
 
 
 
     return (
         <div>
-            <h1 className="text-center text-xl">Team Members</h1>
+            <h1 className="text-center text-xl">Recent Activities</h1>
             <List
                 itemLayout="horizontal"
-                dataSource={teamMembers}
+                dataSource={recentActivities}
                 renderItem={(item, index) => (
                     <List.Item>
-                        <List.Item.Meta style={{
-                            textAlign: 'left'
-                        }}
-                            avatar={<Avatar src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`} />}
-                            title={item.username}
-                            description={item.email}
+                        <List.Item.Meta
+                            style={{
+                                textAlign: 'left'
+                            }}
+                            title={item.name}
+                            description={item.description}
                         />
-                        <div>Role: {item.role}</div>
+                        <div>Status: {item.status}</div>
                     </List.Item>
                 )}
             />
@@ -58,9 +59,9 @@ const TeamMembersPage = () => {
     );
 };
 
-export default TeamMembersPage;
+export default RecentActivities;
 
-TeamMembersPage.getLayout = function getLayout(page) {
+RecentActivities.getLayout = function getLayout(page) {
     return (
         <MainLayout>
             <ProjectLayout>

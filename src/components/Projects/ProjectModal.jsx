@@ -1,16 +1,25 @@
 import { Button, DatePicker, Form, Input, Modal, Select } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
+import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import CommonSelectDropdown from './../shared/CommonSelectDropdown/CommonSelectDropdown.jsx';
 const { Option } = Select;
 
 
-const ProjectModal = ({ isAdd, users, isUserDataLoading, isAddOpen, isEditOpen, selectedProject, handleCancel, onSubmitForm, handleAssignedUsersChange }) => {
+const ProjectModal = ({ isAdd, users, form, isUserDataLoading, isAddOpen, isEditOpen, selectedProject, handleCancel, onSubmitForm, handleAssignedUsersChange }) => {
     const [usersData, setUsersData] = useState([])
+    const [projectData, setProjectData] = useState({})
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
+
+    useEffect(() => {
+        const data = { ...selectedProject }
+        data.startDate = dayjs(data.startDate)
+        data.dueDate = dayjs(data.dueDate)
+        setProjectData(data)
+    }, [selectedProject])
 
 
     useEffect(() => {
@@ -23,6 +32,7 @@ const ProjectModal = ({ isAdd, users, isUserDataLoading, isAddOpen, isEditOpen, 
         <Modal title={isAdd ? `Add New Project` : `Edit Project`} footer={null} open={isAdd ? isAddOpen : isEditOpen} onCancel={handleCancel}>
             <Form
                 name={isAdd ? `Add New Project` : `Edit Project`}
+                form={form}
                 labelCol={{
                     span: 8,
                 }}
@@ -32,7 +42,7 @@ const ProjectModal = ({ isAdd, users, isUserDataLoading, isAddOpen, isEditOpen, 
                 style={{
                     maxWidth: 600,
                 }}
-                initialValues={selectedProject}
+                initialValues={projectData}
                 onFinish={onSubmitForm}
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"

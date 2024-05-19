@@ -1,7 +1,7 @@
 import { useProject } from '@/hooks/useProject';
 import useUpdateProject from '@/hooks/useUpdateProject';
 import { DeleteOutlined, DoubleRightOutlined, EditOutlined } from '@ant-design/icons';
-import { Card, Popover } from 'antd';
+import { Card, Form, Tooltip } from 'antd';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
@@ -19,6 +19,9 @@ const ProjectCard = ({ project }) => {
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const router = useRouter()
     const { setSelectedProject } = useProject()
+    const [form] = Form.useForm();
+
+
     const handleCancelEditModal = () => {
         setIsEditModalOpen(false)
     }
@@ -68,13 +71,13 @@ const ProjectCard = ({ project }) => {
             }}
 
             actions={[
-                <Popover key="details" placement="bottom" content={<p className='text-xs'>Details</p>}><DoubleRightOutlined onClick={() => {
+                <Tooltip key="details" placement="bottom" title='Details'><DoubleRightOutlined key="details" onClick={() => {
                     setSelectedProject(project)
                     router.push(`/projects/${project.id}`)
-                }} /></Popover>
+                }} /></Tooltip>
                 ,
-                <Popover key="edit" placement="bottom" content={<p className='text-xs'>Edit</p>}><EditOutlined onClick={() => setIsEditModalOpen(true)} /></Popover>,
-                <Popover key="delete" placement="bottom" content={<p className='text-xs text-red-700'>Delete</p>}><DeleteOutlined onClick={() => setIsDeleteModalOpen(true)} /></Popover>,
+                <Tooltip key="edit" placement="bottom" title='Edit'><EditOutlined key="edit" onClick={() => setIsEditModalOpen(true)} /></Tooltip>,
+                <Tooltip key="delete" placement="bottom" title='Delete'><DeleteOutlined key="delete" onClick={() => setIsDeleteModalOpen(true)} /></Tooltip>,
             ]}
         >
             <Meta
@@ -85,7 +88,7 @@ const ProjectCard = ({ project }) => {
                 <p>Status: {project.status}</p>
             </div>
         </Card>
-        <ProjectModal isAdd={false} selectedProject={project} isEditOpen={isEditModalOpen} handleCancel={handleCancelEditModal} onSubmitForm={handleEditProject} />
+        <ProjectModal isAdd={false} form={form} selectedProject={project} isEditOpen={isEditModalOpen} handleCancel={handleCancelEditModal} onSubmitForm={handleEditProject} />
         <ConfirmModal isOpen={isDeleteModalOpen} handleCancel={handleCancelDeleteModal} handleOk={handleDeleteProject}>{confirmDialogContent}</ConfirmModal>
     </>
 };

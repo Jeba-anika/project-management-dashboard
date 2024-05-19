@@ -1,3 +1,4 @@
+import { useAuth } from '@/hooks/useAuth';
 import { Button, Form, Input } from 'antd';
 import { useRouter } from 'next/router';
 
@@ -5,8 +6,10 @@ import { useRouter } from 'next/router';
 
 const Login = () => {
     const router = useRouter();
+    const { user, setUser } = useAuth()
     const onFinish = (values) => {
         if (values.email && values.password) {
+            setUser(values)
             router.push('/projects')
         }
         console.log('Success:', values);

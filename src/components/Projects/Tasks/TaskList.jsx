@@ -91,6 +91,7 @@ const TaskList = ({ list, columnName }) => {
                                     extra={<div className='flex gap-3'>
                                         <Button icon={<EditOutlined />} onClick={() => {
                                             setIsEditTaskModalOpen(true)
+                                            console.log(item)
                                             setSelectedTask(item)
                                         }} />
                                         <Button icon={<DeleteOutlined className='text-red-500' onClick={() => {

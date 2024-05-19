@@ -1,18 +1,24 @@
 import CommonSelectDropdown from '@/components/shared/CommonSelectDropdown/CommonSelectDropdown';
 import { Button, DatePicker, Form, Input, Modal, Select } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
+import dayjs from 'dayjs';
+import { useEffect, useState } from 'react';
 const { Option } = Select;
 
 
 const TaskModal = ({ isAdd, usersData, handleChangeMember, isAddOpen, isEditOpen, handleCancel, onAddSubmitForm, onEditSubmitForm, form, initialVals }) => {
-    console.log(usersData)
-    const initialValues = initialVals ?? {
-        name: '',
-        description: '',
-        status: 'To Do',
-        dueDate: '',
-        startDate: ''
-    }
+    const [initialValues, setInitialValues] = useState({})
+    console.log(initialVals)
+    useEffect(() => {
+        console.log(initialVals)
+        const data = { ...initialVals }
+        data.startDate = dayjs(data.startDate)
+        data.dueDate = dayjs(data.dueDate)
+        setInitialValues({ ...data })
+    }, [])
+
+
+
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };

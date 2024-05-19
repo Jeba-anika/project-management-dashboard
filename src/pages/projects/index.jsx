@@ -4,8 +4,9 @@ import ProjectModal from "@/components/Projects/ProjectModal";
 import Loader from "@/components/shared/Loader";
 import useAddProject from "@/hooks/useAddProject";
 import useFetchData from "@/hooks/useFetchData";
+import { useProject } from "@/hooks/useProject";
 import { FolderAddOutlined } from "@ant-design/icons";
-import { Button, Col, Row } from 'antd';
+import { Button, Col, Form, Row } from 'antd';
 import { useState } from "react";
 
 const ProjectsPage = () => {
@@ -14,6 +15,8 @@ const ProjectsPage = () => {
     const { data, isLoading } = useFetchData({ url: 'http://localhost:3000/projects', key: 'projects' })
     const { AddProject, addedData } = useAddProject()
     const { data: users, isLoading: isUserDataLoading, isError, error } = useFetchData({ url: 'http://localhost:3000/users', key: 'users' })
+    const { setSelectedProject } = useProject()
+    const [form] = Form.useForm();
 
 
     const handleAssignedUsersChange = (value) => {
@@ -41,6 +44,7 @@ const ProjectsPage = () => {
         AddProject(data, {
             onSuccess: (addedProject) => {
                 setIsAddProjectModalOpen(false);
+                setSelectedProject({})
                 form.resetFields();
             },
             onError: (error) => {
@@ -74,7 +78,11 @@ const ProjectsPage = () => {
 
 
             </Row>
-            <ProjectModal isAdd={true} users={users} isUserDataLoading={isUserDataLoading} isAddOpen={isAddProjectModalOpen} handleCancel={() => setIsAddProjectModalOpen(false)} onSubmitForm={handleAddProject} handleAssignedUsersChange={handleAssignedUsersChange}></ProjectModal>
+            <ProjectModal form={form} isAdd={true} users={users} isUserDataLoading={isUserDataLoading} isAddOpen={isAddProjectModalOpen} handleCancel={() => {
+                setIsAddProjectModalOpen(false);
+                form.resetFields();
+                setSelectedProject({})
+            }} onSubmitForm={handleAddProject} handleAssignedUsersChange={handleAssignedUsersChange}></ProjectModal>
         </div>
     );
 };
