@@ -68,13 +68,13 @@ const ProjectCard = ({ project }) => {
             }}
 
             actions={[
-                <Popover placement="bottom" content={<p className='text-xs'>Details</p>}><DoubleRightOutlined key="details" onClick={() => {
+                <Popover key="details" placement="bottom" content={<p className='text-xs'>Details</p>}><DoubleRightOutlined onClick={() => {
                     setSelectedProject(project)
                     router.push(`/projects/${project.id}`)
                 }} /></Popover>
                 ,
-                <Popover placement="bottom" content={<p className='text-xs'>Edit</p>}><EditOutlined key="edit" onClick={() => setIsEditModalOpen(true)} /></Popover>,
-                <Popover placement="bottom" content={<p className='text-xs text-red-700'>Delete</p>}><DeleteOutlined key="delete" onClick={() => setIsDeleteModalOpen(true)} /></Popover>,
+                <Popover key="edit" placement="bottom" content={<p className='text-xs'>Edit</p>}><EditOutlined onClick={() => setIsEditModalOpen(true)} /></Popover>,
+                <Popover key="delete" placement="bottom" content={<p className='text-xs text-red-700'>Delete</p>}><DeleteOutlined onClick={() => setIsDeleteModalOpen(true)} /></Popover>,
             ]}
         >
             <Meta
